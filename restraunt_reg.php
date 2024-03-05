@@ -60,10 +60,10 @@
                 <label for="timings">Timing:</label>
                 <input type="text" id="timings" name="timings" placeholder="Enter timing" required>
             </div>
-            <div class="form-group">
+        </div>
+        <div class="btn">
                 <button type="submit">Submit</button>
             </div>
-        </div>
         </form>
     </div>
 </body>

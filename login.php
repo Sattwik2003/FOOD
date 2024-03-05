@@ -22,9 +22,9 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter password" required>
             </div>
-            <div class="form-group">
-                <button type="submit" onclick="">Login</button>
             </div>
+            <div class="btn">
+                <button type="submit">Login</button>
             </div>
         </form>
     </div>

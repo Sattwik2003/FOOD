@@ -19,9 +19,10 @@
                 <label for="dishtype">Dish type :</label>
                 <input type="text" id="dishtype" name="dishtype" placeholder="Enter dish type" required>
             </div>
-            <div class="form-group">
-                <button type="submit">Submit</button>
+            
             </div>
+            <div class="btn">
+                <button type="submit">Submit</button>
             </div>
         </form>
     </div>

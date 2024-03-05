@@ -22,10 +22,10 @@
                 <label for="pincode">Pincode :</label>
                 <input type="text" id="pincode" name="pincode" placeholder="Enter pincode" required>
             </div>
-            <div class="form-group">
+        </div>
+        <div class="btn">
                 <button type="submit">Submit</button>
             </div>
-        </div>
         </form>
     </div>
 </body>
