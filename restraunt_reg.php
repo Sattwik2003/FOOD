@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Registration Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="registration-container">
+    <div class="container">
+        
+        <form name="shop_regform" method="post">
+        <input type="hidden" name="mode" value="1" >
         <h2>Restaurant Registration</h2>
-        <form>
+        <div class="form">
             <div class="form-group">
                 <label for="shopName">Shop Name:</label>
                 <input type="text" id="shopName" name="shopName" placeholder="Enter shop name" required>
@@ -49,8 +53,17 @@
                 <textarea id="offers" name="offers" placeholder="Enter any offers or promotions"></textarea>
             </div>
             <div class="form-group">
+                <label for="validity">Validity:</label>
+                <input type="text" id="validity" name="validity" placeholder="Enter validity" required>
+            </div>
+            <div class="form-group">
+                <label for="timings">Timing:</label>
+                <input type="text" id="timings" name="timings" placeholder="Enter timing" required>
+            </div>
+            <div class="form-group">
                 <button type="submit">Submit</button>
             </div>
+        </div>
         </form>
     </div>
 </body>

@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form fillup</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <div class="login-container">
+    <div class="container">
+        
+        <form name="locationform" method="post">
+        <input type="hidden" name="mode" value="1" >
         <h2>Location</h2>
-        <form>
+        <div class="form">
             <div class="form-group">
                 <label for="locationarea">Location Area :</label>
                 <input type="text" id="locationarea" name="locationarea" placeholder="Enter location area" required>
@@ -21,6 +25,7 @@
             <div class="form-group">
                 <button type="submit">Submit</button>
             </div>
+        </div>
         </form>
     </div>
 </body>
