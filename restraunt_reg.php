@@ -1,3 +1,38 @@
+<?php $con=mysqli_connect("localhost","root","","food_foodie");
+if(!empty($_REQUEST['mode']))
+{  
+	$rec_shopName = $_REQUEST['shopName']; 	
+    $rec_location = $_REQUEST['location'];  
+    $rec_about = $_REQUEST['about'];
+    $rec_foodCategory = $_REQUEST['foodCategory'];
+    $rec_signatureDish = $_REQUEST['signatureDish'];
+    $rec_foodLicenseNumber = $_REQUEST['foodLicenseNumber'];
+    $uploadlocation="uploaded/";  
+	$fetchFileName = $_FILES['shop_image']['name'];
+	$rand_variable = rand(11111, 99999);  
+	$new_file=$rand_variable."_".$fetchFileName;    
+    $rec_offers = $_REQUEST['offers'];
+    $rec_validity = $_REQUEST['validity'];
+    $rec_timings = $_REQUEST['timings']; 
+    if(is_uploaded_file($_FILES['shop_image']['tmp_name']))
+	{
+			@move_uploaded_file($_FILES['shop_image']['tmp_name'],$uploadlocation.$new_file);
+	}
+    $sql_con="INSERT INTO `shop info` SET 
+    `Shop Name`= '$rec_shopName', 
+    `Location`= '$rec_location'
+    `About`= '$rec_about'
+    `Food Category`= '$rec_foodCategory'
+    `Signature Dish`= '$rec_signatureDish'
+    `Food License No`= '$rec_foodLicenseNumber'
+    `Image`= '$new_file'   
+    `Offers`= '$rec_offers'
+    `Validity`= '$rec_validity'
+    `Timings`= '$rec_timings'";
+    $res=mysqli_query($con, $sql_con);   
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +45,7 @@
 
     <div class="container">
         
-        <form name="shop_regform" method="post">
+        <form name="shop_regform" method="post" action="" enctype="multipart/form-data" >
         <input type="hidden" name="mode" value="1" >
         <h2>Restaurant Registration</h2>
         <div class="form">
@@ -46,7 +81,8 @@
             </div>
             <div class="form-group">
                 <label for="shop_image">Image:</label>
-                <input type="file" id="shop_image" name="shop_image" required>
+                <input type="file" accept="image/*" onchange="previewImage(event)" id="shop_image" name="shop_image" required><br>
+                <img id="preview" alt="Preview Image"><br>
             </div>
             <div class="form-group">
                 <label for="offers">Offers:</label>
@@ -66,5 +102,6 @@
             </div>
         </form>
     </div>
+    <script src="java.js"></script>
 </body>
 </html>

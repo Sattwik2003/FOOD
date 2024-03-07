@@ -34,3 +34,8 @@ button{
     background-color:coral;
     border-radius: 10px;
 }
+#preview {
+    width: 20vb;
+    height: 20vh;
+ }
+ 

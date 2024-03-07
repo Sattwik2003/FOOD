@@ -1,3 +1,14 @@
+<?php $con=mysqli_connect("localhost","root","","food_foodie");
+if(!empty($_REQUEST['mode']))
+{  
+	$rec_location = $_REQUEST['locationarea']; 	
+    $rec_pincode = $_REQUEST['pincode'];  
+    $sql_con="INSERT INTO `location` SET 
+    `Location_Area`= '$rec_location', 
+    `Pincode`= '$rec_pincode'";   
+    $res=mysqli_query($con, $sql_con);   
+} 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="pincode">Pincode :</label>
-                <input type="text" id="pincode" name="pincode" placeholder="Enter pincode" required>
+                <input type="number" id="pincode" name="pincode" placeholder="Enter pincode" required>
             </div>
         </div>
         <div class="btn">

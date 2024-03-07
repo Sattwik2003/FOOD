@@ -1,3 +1,13 @@
+<?php $con=mysqli_connect("localhost","root","","food_foodie");
+if(!empty($_REQUEST['mode']))
+{  
+	$rec_dishtype = $_REQUEST['dishtype']; 	  
+    $sql_con="INSERT INTO `dishes master` SET 
+    `Dish_Type`= '$rec_dishtype'";   
+    $res=mysqli_query($con, $sql_con);   
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
