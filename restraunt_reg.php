@@ -6,21 +6,20 @@ if(!empty($_REQUEST['mode']))
     $rec_about = $_REQUEST['about'];
     $rec_foodCategory = $_REQUEST['foodCategory'];
     $rec_signatureDish = $_REQUEST['signatureDish'];
-    $rec_foodLicenseNumber = $_REQUEST['foodLicenseNumber'];
-    $uploadlocation="uploaded/";  
-	$fetchFileName = $_FILES['shop_image']['name'];
-	$rand_variable = rand(11111, 99999);  
-	$new_file=$rand_variable."_".$fetchFileName;    
+    $rec_foodLicenseNumber = $_REQUEST['foodLicenseNumber'];   
     $rec_offers = $_REQUEST['offers'];
     $rec_validity = $_REQUEST['validity'];
     $rec_timings = $_REQUEST['timings']; 
+    $uploadlocation="uploaded/";  
+	$fetchFileName = $_FILES['shop_image']['name'];
+	$rand_variable = rand(11111, 99999);  
+	$new_file=$rand_variable."_".$fetchFileName; 
     if(is_uploaded_file($_FILES['shop_image']['tmp_name']))
 	{
 			@move_uploaded_file($_FILES['shop_image']['tmp_name'],$uploadlocation.$new_file);
 	}
-    $sql_con="INSERT INTO `shop info` SET 
-    `Shop Name`= '$rec_shopName', 
-    `Location`= '$rec_location'
+    $sql_con="INSERT INTO `shop_info` SET 
+    `Shop Name`= '$rec_shopName',     
     `About`= '$rec_about'
     `Food Category`= '$rec_foodCategory'
     `Signature Dish`= '$rec_signatureDish'
@@ -28,7 +27,8 @@ if(!empty($_REQUEST['mode']))
     `Image`= '$new_file'   
     `Offers`= '$rec_offers'
     `Validity`= '$rec_validity'
-    `Timings`= '$rec_timings'";
+    `Timings`= '$rec_timings'
+    `Location`= '$rec_location'";
     $res=mysqli_query($con, $sql_con);   
 } 
 ?>
@@ -79,7 +79,7 @@ if(!empty($_REQUEST['mode']))
                 <label for="foodLicenseNumber">Food License Number:</label>
                 <input type="text" id="foodLicenseNumber" name="foodLicenseNumber" placeholder="Enter food license number" required>
             </div>
-            <div class="form-group">
+            <div>
                 <label for="shop_image">Image:</label>
                 <input type="file" accept="image/*" onchange="previewImage(event)" id="shop_image" name="shop_image" required><br>
                 <img id="preview" alt="Preview Image"><br>

@@ -1,8 +1,9 @@
 <?php $con=mysqli_connect("localhost","root","","food_foodie");
+session_start();                            
 if(!empty($_REQUEST['mode']))
 {  
 	$rec_shopName = $_REQUEST['shopName']; 	
-    $rec_password = $_REQUEST['password'];  
+    $rec_password = md5($_REQUEST['password']);   
     $sql_con="INSERT INTO `login master` SET 
     `Shop_Username`= '$rec_shopName', 
     `Shop_Password`= '$rec_password'";   
