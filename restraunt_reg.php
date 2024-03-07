@@ -20,14 +20,14 @@ if(!empty($_REQUEST['mode']))
 	}
     $sql_con="INSERT INTO `shop_info` SET 
     `Shop Name`= '$rec_shopName',     
-    `About`= '$rec_about'
-    `Food Category`= '$rec_foodCategory'
-    `Signature Dish`= '$rec_signatureDish'
-    `Food License No`= '$rec_foodLicenseNumber'
-    `Image`= '$new_file'   
-    `Offers`= '$rec_offers'
-    `Validity`= '$rec_validity'
-    `Timings`= '$rec_timings'
+    `About`= '$rec_about',
+    `Food Category`= '$rec_foodCategory',
+    `Signature Dish`= '$rec_signatureDish',
+    `Food License No`= '$rec_foodLicenseNumber',
+    `Image`= '$new_file',  
+    `Offers`= '$rec_offers',
+    `Validity`= '$rec_validity',
+    `Timings`= '$rec_timings',
     `Location`= '$rec_location'";
     $res=mysqli_query($con, $sql_con);   
 } 
