@@ -18,7 +18,7 @@ if(!empty($_REQUEST['mode']))
 	{
 			@move_uploaded_file($_FILES['shop_image']['tmp_name'],$uploadlocation.$new_file);
 	}
-    $sql_con="INSERT INTO `shop_info` SET 
+    $sql_con="INSERT INTO `shop info` SET 
     `Shop Name`= '$rec_shopName',     
     `About`= '$rec_about',
     `Food Category`= '$rec_foodCategory',
