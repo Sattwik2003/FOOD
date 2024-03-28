@@ -1,4 +1,5 @@
-<?php $con=mysqli_connect("localhost","root","","food_foodie");
+<?php 
+include("conn.php");
 session_start();                            
 if(!empty($_REQUEST['mode']))
 {  

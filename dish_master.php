@@ -1,4 +1,5 @@
-<?php $con=mysqli_connect("localhost","root","","food_foodie");
+<?php
+include("conn.php");
 if(!empty($_REQUEST['mode']))
 {  
 	$rec_dishtype = $_REQUEST['dishtype']; 	  
